@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wedding Countdown</title>
+    <style>
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 10px;
+            margin: 0;
+        }
+
+        .wedding-img {
+            max-width: 100%;
+            width: 800px;
+            height: auto;
+        }
+
+        #countdown {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="main-container">
+    <h1>Wir sagen Ja!</h1>
+    <img src="wedding.jpeg" alt="wedding" class="wedding-img"/>
+    <p id="countdown"></p>
+
+    <script>
+        updateCountdown();
+
+        setInterval(function () {
+            updateCountdown();
+        }, 1000);
+
+        function updateCountdown() {
+            const currentDateTime = new Date();
+            const weddingDateTime = new Date(2019, 5, 8, 6, 0, 0);
+            const dateDiff = weddingDateTime - currentDateTime;
+            const days = Math.ceil(dateDiff / 1000 / 3600 / 24);
+            const hours = Math.ceil(dateDiff / 1000 / 3600 % 24);
+            const minutes = Math.ceil(dateDiff / 1000 / 60 % 60);
+            const seconds = Math.ceil(dateDiff / 1000 % 60);
+            document.getElementById('countdown').innerText = countDownPrettyPrint(days, hours, minutes, seconds);
+        }
+
+        function countDownPrettyPrint(days, hours, minutes, seconds) {
+            return `Noch ${days} Tage, ${hours} Stunden, ${minutes} Minuten und ${seconds} Sekunden`;
+        }
+    </script>
+</body>
+</html>
