@@ -15,12 +15,15 @@
         }
 
         h1 {
-            margin: 0 0 20px 0;
+            margin: 0 10px 20px 0;
         }
 
         .main-container {
-            padding: 0 10px;
             text-align: center;
+            border-top: 3px solid #09b0bc;
+            border-bottom: 3px solid #09b0bc;
+            padding: 20px 0;
+            margin: 0 10px;
         }
 
         .wedding-img {
@@ -34,11 +37,24 @@
             font-weight: bold;
             margin: 20px 0 0 0;
         }
+
+        .headline-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hearts-img {
+            width: 70px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
     <div class="main-container">
-        <h1>Wir sagen Ja!</h1>
+        <div class="headline-container">
+            <h1>Wir sagen Ja!</h1>
+            <img src="hearts.jpg" alt="hearts" class="hearts-img"/>
+        </div>
         <img src="wedding.jpeg" alt="wedding" class="wedding-img"/>
         <p id="countdown"></p>
     </div>
