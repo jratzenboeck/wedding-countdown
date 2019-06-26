@@ -67,11 +67,12 @@
     </div>
 
     <script>
-        updateCountdown();
+        document.getElementById('countdown').innerText = 'Wir haben geheiratet!';
+        // updateCountdown();
 
-        setInterval(function () {
-            updateCountdown();
-        }, 1000);
+        // setInterval(function () {
+        //     updateCountdown();
+        // }, 1000);
 
         function updateCountdown() {
             const currentDateTime = new Date();
